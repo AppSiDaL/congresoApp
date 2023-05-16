@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "app",
-    "slug": "app",
+    "slug": "congreso-tesjo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.appsidal.congresotesjo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "188e0157-9fc6-47e7-86ce-83fb9a06c487"
+      }
+    },
+    "owner": "appsidal"
   }
 }
