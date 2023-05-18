@@ -121,9 +121,9 @@ export default function CertificadoScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      <Button title="Print" onPress={print} />
+      <Button title="Imprimir" onPress={print} />
       <View style={styles.spacer} />
-      <Button title="Print to PDF file" onPress={printToFile} />
+      <Button title="Compartir Archivo PDF" onPress={printToFile} />
       {Platform.OS === "ios" && (
         <>
           <View style={styles.spacer} />
