@@ -28,24 +28,28 @@ export default function CertificadoScreen({ route }) {
     </style>
     <body>
       <div class="gen">
-        <a href="https://ibb.co/gMBX61Z"
-          ><img
-            src="https://i.ibb.co/svMDtS9/logo-Tesjo.png"
-            alt="logo-Tesjo"
-            border="0"
-        /></a>
-        <a href="https://ibb.co/bX31xS7"
-          ><img
-            style="height: 200px; margin-left: 1000px"
-            src="https://i.ibb.co/KWG6YMm/isc-removebg-preview-1.png"
-            alt="isc-removebg-preview-1"
-            border="0"
-        /></a>
+        <div class="head" style="flex: 1;display: flex;">
+          <a href="https://ibb.co/gMBX61Z"
+            ><img
+              src="https://i.ibb.co/svMDtS9/logo-Tesjo.png"
+              alt="logo-Tesjo"
+              border="0"
+          /></a>
+          <a href="https://ibb.co/bX31xS7"
+            ><img
+              style="height: 200px; margin-left: 900px"
+              src="https://i.ibb.co/KWG6YMm/isc-removebg-preview-1.png"
+              alt="isc-removebg-preview-1"
+              border="0"
+          /></a>
+        </div>
         <div class="texto">
           <h1 style="text-align: center; margin-top: 30px">
             EL TECNOLOGICO DE ESTUDIOS SUPERIORES DE JOCOTITAL OTORGA EL PRESENTE:
           </h1>
-          <h1 style="font-size: 70px; text-align: center;color: #0e0ae2;">RECONOCIMIENTO</h1>
+          <h1 style="font-size: 70px; text-align: center; color: #0e0ae2">
+            RECONOCIMIENTO
+          </h1>
           <h1 style="text-align: center">
             AL ESTUDIANTE DE LA INGENIERIA EN SISTEMAS COMPUTACIONALES:
           </h1>
@@ -96,6 +100,8 @@ export default function CertificadoScreen({ route }) {
   const print = async () => {
     // On iOS/android prints the given html. On web prints the HTML from the current page.
     await Print.printAsync({
+      height:1080,
+      width:1920,
       html,
       printerUrl: selectedPrinter?.url, // iOS only
     });
@@ -103,7 +109,7 @@ export default function CertificadoScreen({ route }) {
 
   const printToFile = async () => {
     // On iOS/android prints the given html. On web prints the HTML from the current page.
-    const { uri } = await Print.printToFileAsync({ html });
+    const { uri } = await Print.printToFileAsync({ html,Orientation });
     console.log("File has been saved to:", uri);
     await shareAsync(uri, { UTI: ".pdf", mimeType: "application/pdf" });
   };
