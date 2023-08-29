@@ -18,8 +18,9 @@ $validar = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 if ($validar == null) {
     $consulta = "INSERT INTO alumnos VALUES ('" . $numeroControl . "',
-    '" . $nombre . "','" . $apellidoPaterno . "','" . $apellidoMaterno . "','" . $carrera . "',
-    '" . $grupo . "','" . $usuario . "','" . $contraseña . "','','','','','');";
+    '" . $nombre . "','" . $apellidoPaterno . "','" . $apellidoMaterno .
+     "','" . $carrera . "', '" . $grupo . "','" . $usuario . "','" 
+     . $contraseña . "','','','','','');";
     $statement = $pdo->prepare($consulta);
     $statement->execute();
     $validar = $statement->fetchAll(PDO::FETCH_ASSOC);

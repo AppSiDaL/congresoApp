@@ -15,14 +15,16 @@ for ($i = 1; $i < 6; $i++) {
     }
 }
 if ($arr == null) {
-    $consulta = "UPDATE alumnos SET actividad" . 1 . " = '" . $id . "' WHERE alumnos.id = '" . $globalId . "';";
+    $consulta = "UPDATE alumnos SET actividad" . 1 . " = '" . $id .
+     "' WHERE alumnos.id = '" . $globalId . "';";
     $statement = $pdo->prepare($consulta);
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 } else {
     if (count($arr) < 5) {
         $pdo = new PDO('mysql:host=localhost;dbname=congreso', 'root', '');
-        $consulta = "UPDATE alumnos SET actividad" . (count($arr) + 1) . " = '" . $id . "' WHERE alumnos.id = '" . $globalId . "';";
+        $consulta = "UPDATE alumnos SET actividad" . (count($arr) + 1) . " = '"
+         . $id . "' WHERE alumnos.id = '" . $globalId . "';";
         $statement = $pdo->prepare($consulta);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
